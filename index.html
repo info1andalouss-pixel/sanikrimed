@@ -1,1 +1,891 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>SANIKRIMED | مواد السباكة والترصيص</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#f5f6f8;
+    color:#102744;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.top{
+    background:#06264b;
+    color:white;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+header{
+    background:white;
+    box-shadow:0 2px 10px #0002;
+}
+
+.nav{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:12px 20px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    color:#06264b;
+}
+
+.logo span{
+    color:#c51e27;
+}
+
+.logo small{
+    display:block;
+    font-size:13px;
+    color:#222;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+    flex:1;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.search{
+    width:210px;
+    padding:11px;
+    border:1px solid #ddd;
+    border-radius:25px;
+}
+
+.cart{
+    background:#06264b;
+    color:white;
+    border:0;
+    padding:11px 18px;
+    border-radius:25px;
+}
+
+.hero{
+    background:linear-gradient(90deg,#fff,#e5ebef);
+}
+
+.hero-content{
+    max-width:1250px;
+    margin:auto;
+    min-height:420px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:30px;
+    padding:40px 25px;
+}
+
+.hero h1{
+    font-size:45px;
+    line-height:1.2;
+    color:#06264b;
+}
+
+.hero h1 span{
+    color:#c51e27;
+}
+
+.hero p{
+    font-size:19px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:10px;
+    border:0;
+    font-weight:bold;
+    margin:5px;
+    cursor:pointer;
+}
+
+.blue{
+    background:#06264b;
+    color:white;
+}
+
+.green{
+    background:#159447;
+    color:white;
+}
+
+.products-image{
+    min-height:320px;
+    border-radius:25px;
+    background:
+    radial-gradient(circle,#fff 0%,#d8e2e8 55%,#b7c6d1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:100px;
+}
+
+.features{
+    max-width:1150px;
+    margin:-25px auto 40px;
+    background:#06264b;
+    color:white;
+    border-radius:20px;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.feature{
+    text-align:center;
+    padding:8px;
+    border-left:1px solid #ffffff44;
+    font-weight:bold;
+}
+
+section{
+    max-width:1200px;
+    margin:50px auto;
+    padding:0 20px;
+}
+
+.title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:30px;
+    color:#06264b;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
+}
+
+.category{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 3px 12px #0001;
+    font-weight:bold;
+}
+
+.category .icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
+}
+
+.product{
+    background:white;
+    border-radius:15px;
+    padding:12px;
+    box-shadow:0 3px 12px #0001;
+}
+
+.product-image{
+    height:130px;
+    background:#f1f3f5;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+}
+
+.product h3{
+    font-size:15px;
+    margin:10px 0;
+}
+
+.stars{
+    color:#e1a900;
+}
+
+.price{
+    color:#c51e27;
+    font-size:19px;
+    font-weight:bold;
+    margin:8px 0;
+}
+
+.product button{
+    width:100%;
+    padding:9px;
+    border:0;
+    border-radius:8px;
+    background:#06264b;
+    color:white;
+    font-weight:bold;
+}
+
+.packs{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.pack{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 3px 12px #0001;
+}
+
+.pack-icon{
+    font-size:60px;
+}
+
+.pack h3{
+    margin:12px;
+}
+
+.pack strong{
+    color:#c51e27;
+    font-size:22px;
+}
+
+.pro{
+    background:#06264b;
+    color:white;
+    padding:35px;
+    border-radius:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:center;
+}
+
+.pro h2{
+    font-size:30px;
+    color:#e5b84b;
+    margin-bottom:15px;
+}
+
+.pro li{
+    margin:10px;
+}
+
+.chantier{
+    background:white;
+    border:2px dashed #c8d0d8;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
+}
+
+.service{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:15px;
+    font-weight:bold;
+}
+
+footer{
+    background:#061d38;
+    color:white;
+    padding:40px 6%;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    line-height:2;
+    color:#ccd7e4;
+}
+
+@media(max-width:900px){
+
+nav{
+    display:none;
+}
+
+.hero-content{
+    grid-template-columns:1fr;
+}
+
+.features{
+    grid-template-columns:repeat(2,1fr);
+    margin:20px;
+}
+
+.categories{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.products{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.packs{
+    grid-template-columns:1fr;
+}
+
+.pro{
+    grid-template-columns:1fr;
+}
+
+.services{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.footer-content{
+    grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:500px){
+
+.top{
+    font-size:10px;
+}
+
+.nav{
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:22px;
+}
+
+.search{
+    width:120px;
+}
+
+.hero h1{
+    font-size:32px;
+}
+
+.features{
+    grid-template-columns:1fr;
+}
+
+.categories{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.products{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.services{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.footer-content{
+    grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+<span>🚚 توصيل سريع</span>
+<span>🛡️ جودة مضمونة</span>
+<span>💳 أداء عند الاستلام</span>
+<span>تابعنا على Facebook و Instagram</span>
+</div>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+SANI<span>KRIMED</span>
+<small>مواد السباكة والترصيص</small>
+</div>
+
+<nav>
+<a href="#">الرئيسية</a>
+<a href="#categories">المنتجات</a>
+<a href="#packs">Packs</a>
+<a href="#pro">SANIKRIMED PRO</a>
+<a href="#services">خدماتنا</a>
+</nav>
+
+<input class="search" placeholder="ابحث عن منتج...">
+
+<button class="cart">
+🛒 السلة
+</button>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div>
+
+<h1>
+كل ما تحتاجه
+<span>للسباكة والترصيص</span>
+في مكان واحد
+</h1>
+
+<p>
+جودة مضمونة • أثمنة مناسبة • توصيل سريع • تركيب متخصص
+</p>
+
+<a class="btn blue" href="#products">
+🛒 تسوق الآن
+</a>
+
+<a class="btn green"
+href="https://wa.me/212662456166">
+📲 اطلب عبر واتساب
+</a>
+
+<p>
+السلعة + الخدمة + التركيب
+</p>
+
+</div>
+
+<div class="products-image">
+🚽 🚰 💧 🔧
+</div>
+
+</div>
+
+</section>
+
+
+<div class="features">
+
+<div class="feature">
+🚚
+<br>
+توصيل سريع
+<br>
+<small>حتى باب الدار أو الورشة</small>
+</div>
+
+<div class="feature">
+🔧
+<br>
+خدمة وتركيب
+<br>
+<small>فريق متخصص</small>
+</div>
+
+<div class="feature">
+🛡️
+<br>
+جودة مضمونة
+<br>
+<small>منتجات مختارة</small>
+</div>
+
+<div class="feature">
+👷
+<br>
+أسعار للمهنيين
+<br>
+<small>عروض خاصة</small>
+</div>
+
+<div class="feature">
+📋
+<br>
+خدمة Chantier
+<br>
+<small>صيفط اللائحة نحسبوها ليك</small>
+</div>
+
+</div>
+
+
+<section id="categories">
+
+<h2 class="title">
+تسوق حسب الفئة
+</h2>
+
+<div class="categories">
+
+<div class="category">
+<div class="icon">🚽</div>
+Sanitaires
+<br>
+الحمام
+</div>
+
+<div class="category">
+<div class="icon">🟢</div>
+PPR & PVC
+<br>
+الأنابيب والوصلات
+</div>
+
+<div class="category">
+<div class="icon">💧</div>
+Pompes & Eau
+<br>
+المضخات والماء
+</div>
+
+<div class="category">
+<div class="icon">🚰</div>
+Robinets
+<br>
+الحنفيات
+</div>
+
+<div class="category">
+<div class="icon">🔩</div>
+Accessoires
+<br>
+إكسسوارات السباكة
+</div>
+
+<div class="category">
+<div class="icon">🧰</div>
+Matériel chantier
+<br>
+معدات الورشات
+</div>
+
+</div>
+
+</section>
+
+
+<section id="products">
+
+<h2 class="title">
+الأكثر مبيعاً
+</h2>
+
+<div class="products">
+
+<div class="product">
+<div class="product-image">🟢</div>
+<h3>Tube PPR 20</h3>
+<div class="stars">★★★★★</div>
+<div class="price">15 DH</div>
+<button>🛒 أضف للسلة</button>
+</div>
+
+<div class="product">
+<div class="product-image">⚙️</div>
+<h3>Coude PVC 50</h3>
+<div class="stars">★★★★★</div>
+<div class="price">8 DH</div>
+<button>🛒 أضف للسلة</button>
+</div>
+
+<div class="product">
+<div class="product-image">🚰</div>
+<h3>Robinet laiton 1/2</h3>
+<div class="stars">★★★★★</div>
+<div class="price">35 DH</div>
+<button>🛒 أضف للسلة</button>
+</div>
+
+<div class="product">
+<div class="product-image">🚽</div>
+<h3>WC complet</h3>
+<div class="stars">★★★★★</div>
+<div class="price">650 DH</div>
+<button>🛒 أضف للسلة</button>
+</div>
+
+<div class="product">
+<div class="product-image">💧</div>
+<h3>Pompe à eau 1HP</h3>
+<div class="stars">★★★★★</div>
+<div class="price">1,250 DH</div>
+<button>🛒 أضف للسلة</button>
+</div>
+
+<div class="product">
+<div class="product-image">〰️</div>
+<h3>Flexible 60 cm</h3>
+<div class="stars">★★★★★</div>
+<div class="price">25 DH</div>
+<button>🛒 أضف للسلة</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="packs">
+
+<h2 class="title">
+اختر الـ Pack المناسب لك
+</h2>
+
+<div class="packs">
+
+<div class="pack">
+<div class="pack-icon">🚿</div>
+<h3>Pack Salle de Bain</h3>
+<p>كل ما تحتاجه لتجهيز حمامك</p>
+<strong>1,990 DH</strong>
+<br><br>
+<button class="btn blue">اكتشف Pack</button>
+</div>
+
+<div class="pack">
+<div class="pack-icon">💧</div>
+<h3>Pack Pompe</h3>
+<p>المضخة + اللوازم + التركيب</p>
+<strong>1,490 DH</strong>
+<br><br>
+<button class="btn blue">اطلب العرض</button>
+</div>
+
+<div class="pack">
+<div class="pack-icon">🏠</div>
+<h3>Pack Plomberie Maison</h3>
+<p>تجهيز شبكة الماء والصرف</p>
+<strong>2,490 DH</strong>
+<br><br>
+<button class="btn blue">احصل على عرض</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="pro">
+
+<div class="pro">
+
+<div>
+
+<h2>
+SANIKRIMED PRO
+</h2>
+
+<h3>
+أنت سباك؟ مقاول؟ مهني؟
+</h3>
+
+<p>
+استفد من أثمنة خاصة حسب الكمية.
+</p>
+
+<ul>
+<li>Prix professionnel</li>
+<li>عروض الكمية</li>
+<li>تجهيز طلبات chantier</li>
+<li>توصيل للورشات</li>
+<li>فواتير</li>
+</ul>
+
+<a class="btn green"
+href="https://wa.me/212662456166">
+فتح حساب مهني
+</a>
+
+</div>
+
+<div>
+
+<h2>
+خدمة Chantier
+</h2>
+
+<p>
+صيفط لينا لائحة المواد أو صورة ديالها
+وحنا نحسبوها ليك.
+</p>
+
+<br>
+
+<a class="btn green"
+href="https://wa.me/212662456166">
+📲 صيفط اللائحة عبر واتساب
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="chantier">
+
+<h2>
+🏗️ عندك Chantier؟
+</h2>
+
+<p>
+ما تضيعش وقتك في البحث على المواد.
+صيفط لينا اللائحة أو صورة ديالها.
+</p>
+
+<a class="btn green"
+href="https://wa.me/212662456166">
+إرسال اللائحة عبر WhatsApp
+</a>
+
+</div>
+
+</section>
+
+
+<section id="services">
+
+<h2 class="title">
+خدماتنا
+</h2>
+
+<div class="services">
+
+<div class="service">
+🔧
+<br>
+تركيب السباكة
+</div>
+
+<div class="service">
+💧
+<br>
+تركيب المضخات
+</div>
+
+<div class="service">
+🚿
+<br>
+تجهيز الحمامات
+</div>
+
+<div class="service">
+🏠
+<br>
+أعمال السباكة المنزلية
+</div>
+
+<div class="service">
+🏗️
+<br>
+تجهيز Chantiers
+</div>
+
+<div class="service">
+🚚
+<br>
+خدمة التوصيل
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+<h3>SANIKRIMED</h3>
+<p>
+متجر متخصص في مواد السباكة والترصيص.
+جودة مضمونة، خدمة مناسبة وتركيب متخصص.
+</p>
+</div>
+
+<div>
+<h3>روابط سريعة</h3>
+<p>
+الرئيسية<br>
+المنتجات<br>
+Packs<br>
+SANIKRIMED PRO<br>
+خدماتنا
+</p>
+</div>
+
+<div>
+<h3>معلومات</h3>
+<p>
+سياسة التوصيل<br>
+طرق الدفع<br>
+الاسترجاع<br>
+الأسئلة الشائعة
+</p>
+</div>
+
+<div>
+<h3>تواصل معنا</h3>
+<p>
+📍 114 Lotissement AL ALIA
+Tit Mellil Sidi Hajjaj
+Oued Hassar, Casablanca
+<br>
+📞 +212 662 456 166
+<br>
+📲 WhatsApp
+</p>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
