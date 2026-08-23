@@ -1,88 +1,47 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SANIKRIMED - مواد السباكة والترصيص</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Tahoma, sans-serif; }
-        body { background-color: #f4f6f8; color: #333; }
-        
-        /* Header */
-        header { background: #002b49; color: white; padding: 15px; text-align: center; }
-        header h1 { color: #e63946; font-size: 28px; }
-        header p { font-size: 14px; margin-top: 5px; }
-
-        /* Banner */
-        .hero { background: #004080; color: white; text-align: center; padding: 30px 15px; margin-bottom: 20px; }
-        .hero h2 { font-size: 22px; margin-bottom: 10px; }
-
-        /* Products Grid */
-        .container { max-width: 1100px; margin: auto; padding: 10px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-
-        /* Product Card */
-        .card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .card img { width: 100%; height: 150px; object-fit: contain; margin-bottom: 10px; }
-        .card h3 { font-size: 16px; margin-bottom: 5px; }
-        .price { color: #d90429; font-weight: bold; font-size: 18px; margin-bottom: 10px; }
-        
-        /* WhatsApp Button */
-        .btn-wa { background: #25D366; color: white; border: none; padding: 10px 15px; border-radius: 5px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; width: 100%; }
-        .btn-wa:hover { background: #1eb854; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANIKRIMED - مواد السباكة والترصيص</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>كل ما تحتاجه للسباكة والترصيص في مكان واحد</h1>
+    <nav>
+      <ul>
+        <li><a href="#products">المنتجات</a></li>
+        <li><a href="#packs">العروض</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <h1>SANIKRIMED</h1>
-        <p>كل ما تحتاجه للسباكة والترصيص في مكان واحد</p>
-    </header>
+  <section id="hero">
+    <h2>جودة مضمونة • أثمنة مناسبة • توصيل سريع</h2>
+    <button>تسوق الآن</button>
+  </section>
 
-    <div class="hero">
-        <h2>جودة مضمونة • أثمينة مناسبة • توصيل سريع</h2>
+  <section id="products">
+    <h2>الأكثر مبيعاً</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="images/ppr-tube.jpg" alt="أنبوب PPR">
+        <h3>Tube PPR 20</h3>
+        <p>15.00 DH</p>
+      </div>
+      <div class="product">
+        <img src="images/wc.jpg" alt="مرحاض كامل">
+        <h3>WC complet</h3>
+        <p>650.00 DH</p>
+      </div>
     </div>
+  </section>
 
-    <div class="container">
-        <h2 style="margin-bottom: 15px;">الأكثر مبيعاً</h2>
-        <div class="products-grid">
-            
-            <!-- منتج 1 -->
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Tube PPR 20">
-                <h3>Tube PPR 20</h3>
-                <div class="price">15,00 DH</div>
-                <button class="btn-wa" onclick="orderWA('Tube PPR 20', '15,00 DH')">اطلب عبر واتساب 💬</button>
-            </div>
-
-            <!-- منتج 2 -->
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="WC complet">
-                <h3>WC complet</h3>
-                <div class="price">650,00 DH</div>
-                <button class="btn-wa" onclick="orderWA('WC complet', '650,00 DH')">اطلب عبر واتساب 💬</button>
-            </div>
-
-            <!-- منتج 3 -->
-            <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Pompe à eau 1HP">
-                <h3>Pompe à eau 1HP</h3>
-                <div class="price">1.250,00 DH</div>
-                <button class="btn-wa" onclick="orderWA('Pompe à eau 1HP', '1.250,00 DH')">اطلب عبر واتساب 💬</button>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        // بدّل هذا الرقم برقم الواتساب ديالك (مع 212 بدون + أو 0)
-        const myPhoneNumber = "212662456166"; 
-
-        function orderWA(productName, price) {
-            const message = `السلام عليكم، بغيت نطلب المنتج التالي:%0A- *المنتج:* ${productName}%0A- *الثمن:* ${price}`;
-            const url = `https://wa.me/${myPhoneNumber}?text=${message}`;
-            window.open(url, '_blank');
-        }
-    </script>
+  <footer id="contact">
+    <p>📍 تمارة، المغرب</p>
+    <p>📧 sanikrimed@gmail.com | 📞 +212 662 456 166</p>
+  </footer>
 </body>
 </html>
